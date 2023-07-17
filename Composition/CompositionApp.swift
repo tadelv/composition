@@ -9,9 +9,7 @@ import SwiftUI
 
 @main
 struct CompositionApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+  var body: some Scene {
+    Composition.root
+  }
 }
