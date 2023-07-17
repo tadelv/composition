@@ -1,3 +1,4 @@
+import FeatureC
 import Foundation
 import Models
 import SwiftUINavigation
@@ -12,12 +13,17 @@ public class ViewModelB: ObservableObject {
   
   public enum Destination {
     case detail(DetailStateB)
+    case sheet(ViewModelC)
   }
   
   @Published var destination: Destination?
   
   func goToDetailTapped() {
     self.destination = .detail(DetailStateB())
+  }
+  
+  func goToSheetTapped() {
+    self.destination = .sheet(ViewModelC())
   }
 }
 
@@ -39,6 +45,9 @@ public struct ContentViewB<DetailContent: View>: View {
       Button("Go to detail B") {
         self.model.goToDetailTapped()
       }
+      Button("Go to Feature C") {
+        self.model.goToSheetTapped()
+      }
       NavigationLink(
         unwrapping: self.$model.destination,
         case: /ViewModelB.Destination.detail,
@@ -48,6 +57,12 @@ public struct ContentViewB<DetailContent: View>: View {
       } label: {
         EmptyView()
       }
+    }
+    .sheet(
+      unwrapping: self.$model.destination,
+      case: /ViewModelB.Destination.sheet
+    ) { $model in
+      ContentViewC(model: model)
     }
   }
 }
