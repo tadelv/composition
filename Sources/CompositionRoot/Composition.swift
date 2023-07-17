@@ -10,8 +10,8 @@ import FeatureB
 import Models
 import SwiftUI
 
-enum Composition {
-  static var root: some Scene {
+public enum Composition {
+  public static var root: some Scene {
     WindowGroup {
       main
         .onOpenURL { _ in
