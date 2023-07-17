@@ -24,7 +24,7 @@ public class ViewModelA: ObservableObject {
     case sheet(DetailStateA)
   }
   
-  @Published var destination: Destination?
+  @Published public var destination: Destination?
   
   func goToDetailTapped() {
     self.destination = .detail(DetailStateA())

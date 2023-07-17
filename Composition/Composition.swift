@@ -7,18 +7,23 @@
 
 import FeatureA
 import FeatureB
+import Models
 import SwiftUI
 
 enum Composition {
   static var root: some Scene {
     WindowGroup {
       main
+        .onOpenURL { _ in
+          mainViewModel.destination = .detail(DetailStateA())
+        }
     }
   }
   
+  static let mainViewModel = ViewModelA()
+  
   static var main: some View {
-    let model = ViewModelA()
-    return ContentViewA(model: model) {
+    return ContentViewA(model: mainViewModel) {
       Text("First level: \(String(describing:$0))")
     } sheetContent: { _ in
       NavigationView {
