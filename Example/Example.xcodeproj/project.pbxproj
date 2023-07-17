@@ -10,16 +10,16 @@
 		186640332A65359C00F66D3F /* CompositionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186640322A65359C00F66D3F /* CompositionApp.swift */; };
 		186640372A65359C00F66D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186640362A65359C00F66D3F /* Assets.xcassets */; };
 		1866403A2A65359C00F66D3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186640392A65359C00F66D3F /* Preview Assets.xcassets */; };
-		1895DCD22A6597F100BCE390 /* CompositionRoot in Frameworks */ = {isa = PBXBuildFile; productRef = 1895DCD12A6597F100BCE390 /* CompositionRoot */; };
+		18E04FF62A659B4100265790 /* CompositionRoot in Frameworks */ = {isa = PBXBuildFile; productRef = 18E04FF52A659B4100265790 /* CompositionRoot */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		182451862A6594F3001656FD /* Composition */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Composition; path = ..; sourceTree = "<group>"; };
-		1866402F2A65359C00F66D3F /* Composition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Composition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1866402F2A65359C00F66D3F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186640322A65359C00F66D3F /* CompositionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionApp.swift; sourceTree = "<group>"; };
 		186640362A65359C00F66D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186640392A65359C00F66D3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18A6A9072A6545B50050CF65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		18E04FF42A659B3500265790 /* Composition */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Composition; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1895DCD22A6597F100BCE390 /* CompositionRoot in Frameworks */,
+				18E04FF62A659B4100265790 /* CompositionRoot in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,8 +37,8 @@
 		186640262A65359C00F66D3F = {
 			isa = PBXGroup;
 			children = (
-				182451862A6594F3001656FD /* Composition */,
-				186640312A65359C00F66D3F /* Composition */,
+				18E04FF42A659B3500265790 /* Composition */,
+				186640312A65359C00F66D3F /* Example */,
 				186640302A65359C00F66D3F /* Products */,
 				186640422A653C8B00F66D3F /* Frameworks */,
 			);
@@ -47,12 +47,12 @@
 		186640302A65359C00F66D3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1866402F2A65359C00F66D3F /* Composition.app */,
+				1866402F2A65359C00F66D3F /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		186640312A65359C00F66D3F /* Composition */ = {
+		186640312A65359C00F66D3F /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				18A6A9072A6545B50050CF65 /* Info.plist */,
@@ -60,7 +60,7 @@
 				186640362A65359C00F66D3F /* Assets.xcassets */,
 				186640382A65359C00F66D3F /* Preview Content */,
 			);
-			path = Composition;
+			path = Example;
 			sourceTree = "<group>";
 		};
 		186640382A65359C00F66D3F /* Preview Content */ = {
@@ -81,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1866402E2A65359C00F66D3F /* Composition */ = {
+		1866402E2A65359C00F66D3F /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1866403D2A65359C00F66D3F /* Build configuration list for PBXNativeTarget "Composition" */;
+			buildConfigurationList = 1866403D2A65359C00F66D3F /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
 				1866402B2A65359C00F66D3F /* Sources */,
 				1866402C2A65359C00F66D3F /* Frameworks */,
@@ -93,12 +93,12 @@
 			);
 			dependencies = (
 			);
-			name = Composition;
+			name = Example;
 			packageProductDependencies = (
-				1895DCD12A6597F100BCE390 /* CompositionRoot */,
+				18E04FF52A659B4100265790 /* CompositionRoot */,
 			);
-			productName = Composition;
-			productReference = 1866402F2A65359C00F66D3F /* Composition.app */;
+			productName = Example;
+			productReference = 1866402F2A65359C00F66D3F /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1866402A2A65359C00F66D3F /* Build configuration list for PBXProject "Composition" */;
+			buildConfigurationList = 1866402A2A65359C00F66D3F /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -132,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1866402E2A65359C00F66D3F /* Composition */,
+				1866402E2A65359C00F66D3F /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -282,11 +282,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Composition/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = XLS3XF57J8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Composition/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,7 +297,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.Composition;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -312,11 +312,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Composition/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = XLS3XF57J8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Composition/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -327,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.Composition;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadel.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -338,7 +338,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1866402A2A65359C00F66D3F /* Build configuration list for PBXProject "Composition" */ = {
+		1866402A2A65359C00F66D3F /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1866403B2A65359C00F66D3F /* Debug */,
@@ -347,7 +347,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1866403D2A65359C00F66D3F /* Build configuration list for PBXNativeTarget "Composition" */ = {
+		1866403D2A65359C00F66D3F /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1866403E2A65359C00F66D3F /* Debug */,
@@ -370,7 +370,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1895DCD12A6597F100BCE390 /* CompositionRoot */ = {
+		18E04FF52A659B4100265790 /* CompositionRoot */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CompositionRoot;
 		};

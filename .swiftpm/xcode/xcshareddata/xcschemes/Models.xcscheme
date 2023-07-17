@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1866402E2A65359C00F66D3F"
-               BuildableName = "Composition.app"
-               BlueprintName = "Composition"
-               ReferencedContainer = "container:Composition.xcodeproj">
+               BlueprintIdentifier = "Models"
+               BuildableName = "Models"
+               BlueprintName = "Models"
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -39,16 +39,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1866402E2A65359C00F66D3F"
-            BuildableName = "Composition.app"
-            BlueprintName = "Composition"
-            ReferencedContainer = "container:Composition.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -56,16 +46,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1866402E2A65359C00F66D3F"
-            BuildableName = "Composition.app"
-            BlueprintName = "Composition"
-            ReferencedContainer = "container:Composition.xcodeproj">
+            BlueprintIdentifier = "Models"
+            BuildableName = "Models"
+            BlueprintName = "Models"
+            ReferencedContainer = "container:">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
