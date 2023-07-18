@@ -29,7 +29,31 @@ public struct NavigationView_Ex<Content: View>: View {
 }
 
 extension View {
-  public func navigationDestination() -> some View {
+  public func navigationLink<Value, Case, Content: View>(
+    unwrapping: Binding<Value?>,
+    `case` casePath: CasePath<Value, Case>,
+    onNavigate: @escaping (Bool) -> Void = { _ in },
+    destination: @escaping (Binding<Case>) -> Content
+  ) -> some View {
     self
+      .background {
+        if #available(iOS 16, *) {
+          VStack {
+            EmptyView()
+          }
+            .navigationDestination(
+              unwrapping: unwrapping,
+              case: casePath,
+              destination: destination
+            )
+        } else {
+          NavigationLink(
+            unwrapping: unwrapping,
+            case: casePath,
+            onNavigate: onNavigate,
+            destination: destination,
+            label: { EmptyView() })
+        }
+      }
   }
 }

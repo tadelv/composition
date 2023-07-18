@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "Composition",
   platforms: [
-    .iOS(.v14)
+    .iOS(.v15)
   ],
   products: [
     // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -57,7 +57,8 @@ let package = Package(
       dependencies: [
         .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
         "Models",
-        "FeatureC"
+        "FeatureC",
+        "NavigationTools"
       ]),
     .target(
       name: "FeatureC",

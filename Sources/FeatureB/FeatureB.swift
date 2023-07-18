@@ -3,6 +3,7 @@ import Foundation
 import Models
 import SwiftUINavigation
 import SwiftUI
+import NavigationTools
 
 
 
@@ -48,16 +49,14 @@ public struct ContentViewB<DetailContent: View>: View {
       Button("Go to Feature C") {
         self.model.goToSheetTapped()
       }
-      NavigationLink(
-        unwrapping: self.$model.destination,
-        case: /ViewModelB.Destination.detail,
-        onNavigate: { _ in }
-      ) { $data in
-        self.detailContent(data)
-      } label: {
-        EmptyView()
-      }
     }
+    .navigationLink(
+      unwrapping: self.$model.destination,
+      case: /ViewModelB.Destination.detail,
+      destination: { $binding in
+        ContentViewC(model: ViewModelC())
+      }
+    )
     .sheet(
       unwrapping: self.$model.destination,
       case: /ViewModelB.Destination.sheet
@@ -69,7 +68,7 @@ public struct ContentViewB<DetailContent: View>: View {
 
 struct FeatureBPreview: PreviewProvider {
   static var previews: some View {
-    NavigationView {
+    NavigationView_Ex {
       ContentViewB(model: ViewModelB()) { detail in
         Text("detail: \(String(describing: detail))")
       }
