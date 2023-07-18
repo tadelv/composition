@@ -25,6 +25,10 @@ let package = Package(
     .library(
       name: "FeatureC",
       targets: ["FeatureC"]),
+    .library(
+      name: "NavigationTools",
+      targets: ["NavigationTools"]
+    )
   ],
   dependencies: [
     .package(url: "https://github.com/pointfreeco/swiftui-navigation.git", from: "0.8.0"),
@@ -61,5 +65,11 @@ let package = Package(
         .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
         "Models"
       ]),
+    .target(
+      name: "NavigationTools",
+      dependencies: [
+        .product(name: "SwiftUINavigation", package: "swiftui-navigation")
+      ]
+    )
   ]
 )
