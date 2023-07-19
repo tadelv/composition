@@ -13,6 +13,7 @@ import FeatureC
 public class ListModel: ObservableObject {
   public enum Destination {
     case detail(ViewModelC)
+    case popup
   }
   
   @Published public var destination: Destination?
@@ -37,17 +38,25 @@ public struct ListView: View {
     NavigationView_Ex {
       List {
         ForEach(0...10, id: \.self) { idx in
-          HStack {
-            VStack {
-              Text("Row \(idx)")
-            }
-            Image(systemName: "arrow.up")
-            Spacer()
-          }
-          .contentShape(Rectangle())
-          .onTapGesture {
+          Button {
             self.model.listItemTapped(idx)
+          } label: {
+            HStack {
+              VStack {
+                Text("Row \(idx)")
+              }
+              Image(systemName: "arrow.up")
+              Spacer()
+              VStack {
+                Button("Popup") {
+                  self.model.destination = .popup
+                }
+              }
+              .buttonStyle(.borderless)
+            }
+            .contentShape(Rectangle())
           }
+          .buttonStyle(.plain)
         }
       }
       .navigationLink(
@@ -56,6 +65,11 @@ public struct ListView: View {
         destination: { $model in ContentViewC(model: model) }
       )
       .navigationTitle("List")
+      .popover(unwrapping: self.$model.destination, case: /ListModel.Destination.popup) { _ in
+        Button("Dismiss") {
+          self.model.destination = nil
+        }
+      }
     }
   }
 }

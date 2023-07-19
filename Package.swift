@@ -80,7 +80,6 @@ let package = Package(
     .target(
       name: "ListFeature",
       dependencies: [
-        .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
         "NavigationTools",
         "FeatureC"
       ]
