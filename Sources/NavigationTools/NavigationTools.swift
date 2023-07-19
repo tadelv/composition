@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import SwiftUINavigation
+@_exported import CasePaths
 
 public struct NavigationView_Ex<Content: View>: View {
   

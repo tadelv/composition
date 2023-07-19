@@ -28,6 +28,10 @@ let package = Package(
     .library(
       name: "NavigationTools",
       targets: ["NavigationTools"]
+    ),
+    .library(
+      name: "ListFeature",
+      targets: ["ListFeature"]
     )
   ],
   dependencies: [
@@ -40,7 +44,8 @@ let package = Package(
       name: "CompositionRoot",
       dependencies: [
         "FeatureA",
-        "FeatureB"
+        "FeatureB",
+        "ListFeature"
       ]
     ),
     .target(
@@ -70,6 +75,14 @@ let package = Package(
       name: "NavigationTools",
       dependencies: [
         .product(name: "SwiftUINavigation", package: "swiftui-navigation")
+      ]
+    ),
+    .target(
+      name: "ListFeature",
+      dependencies: [
+        .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
+        "NavigationTools",
+        "FeatureC"
       ]
     )
   ]
