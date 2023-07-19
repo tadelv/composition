@@ -1,5 +1,4 @@
 import Foundation
-import SwiftUINavigation
 import SwiftUI
 
 public class ViewModelC: ObservableObject {

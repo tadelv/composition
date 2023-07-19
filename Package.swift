@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "Composition",
   platforms: [
-    .iOS(.v14)
+    .iOS(.v15)
   ],
   products: [
     // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -25,6 +25,14 @@ let package = Package(
     .library(
       name: "FeatureC",
       targets: ["FeatureC"]),
+    .library(
+      name: "NavigationTools",
+      targets: ["NavigationTools"]
+    ),
+    .library(
+      name: "ListFeature",
+      targets: ["ListFeature"]
+    )
   ],
   dependencies: [
     .package(url: "https://github.com/pointfreeco/swiftui-navigation.git", from: "0.8.0"),
@@ -36,7 +44,8 @@ let package = Package(
       name: "CompositionRoot",
       dependencies: [
         "FeatureA",
-        "FeatureB"
+        "FeatureB",
+        "ListFeature"
       ]
     ),
     .target(
@@ -53,7 +62,8 @@ let package = Package(
       dependencies: [
         .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
         "Models",
-        "FeatureC"
+        "FeatureC",
+        "NavigationTools"
       ]),
     .target(
       name: "FeatureC",
@@ -61,5 +71,19 @@ let package = Package(
         .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
         "Models"
       ]),
+    .target(
+      name: "NavigationTools",
+      dependencies: [
+        .product(name: "SwiftUINavigation", package: "swiftui-navigation")
+      ]
+    ),
+    .target(
+      name: "ListFeature",
+      dependencies: [
+        .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
+        "NavigationTools",
+        "FeatureC"
+      ]
+    )
   ]
 )
