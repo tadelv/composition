@@ -8,25 +8,55 @@
 import SwiftUI
 import FeatureA
 import FeatureB
+import FeatureC
 import ListFeature
 import Models
 import NavigationTools
+
+enum Tab: Int {
+  case tabA
+  case tabB
+}
 
 public enum Composition {
   public static var root: some Scene {
     WindowGroup {
       main
         .onOpenURL { _ in
-          mainViewModel.destination = .detail(DetailStateA())
+//          viewModelA.destination = .detail(DetailStateA())
+          mainViewModel.tab = .tabB
+          listModel.destination = .detail(ViewModelC())
         }
     }
   }
   
-  static let mainViewModel = ViewModelA()
+  static let mainViewModel = MainViewModel()
+  static let viewModelA = ViewModelA()
+  static let listModel = ListModel()
   
   static var main: some View {
-    TabView {
-      ContentViewA(model: mainViewModel) {
+    MainView(
+      model: mainViewModel,
+      viewModelA: viewModelA,
+      listModel: listModel
+    )
+  }
+  
+  
+}
+
+class MainViewModel: ObservableObject {
+  @Published var tab: Tab = .tabA
+}
+
+struct MainView: View {
+  @ObservedObject var model: MainViewModel
+  let viewModelA: ViewModelA
+  let listModel: ListModel
+  
+  var body: some View {
+    TabView(selection: self.$model.tab) {
+      ContentViewA(model: viewModelA) {
         Text("First level: \(String(describing:$0))")
       } sheetContent: { _ in
         NavigationView_Ex {
@@ -34,17 +64,18 @@ public enum Composition {
         }
       }
       .tabItem {
-        Text("A")
+        Label("FeatureA", systemImage: "arrow.left")
       }
-      ListView(model: ListModel())
+      .tag(Tab.tabA)
+      ListView(model: listModel)
         .tabItem {
-          Text("B")
+          Label("List", systemImage: "arrow.right")
         }
+        .tag(Tab.tabB)
     }
-    
   }
   
-  static var detailB: some View {
+  var detailB: some View {
     let model = ViewModelB()
     return ContentViewB(model: model) {
       Text("Second level: \(String(describing:$0))")
