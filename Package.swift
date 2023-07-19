@@ -32,6 +32,14 @@ let package = Package(
     .library(
       name: "ListFeature",
       targets: ["ListFeature"]
+    ),
+    .library(
+      name: "Images",
+      targets: ["Images"]
+    ),
+    .library(
+      name: "Fonts",
+      targets: ["Fonts"]
     )
   ],
   dependencies: [
@@ -69,7 +77,9 @@ let package = Package(
       name: "FeatureC",
       dependencies: [
         .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
-        "Models"
+        "Models",
+        "Images",
+        "Fonts"
       ]),
     .target(
       name: "NavigationTools",
@@ -83,6 +93,13 @@ let package = Package(
         "NavigationTools",
         "FeatureC"
       ]
+    ),
+    .target(
+      name: "Images"
+    ),
+    .target(
+      name: "Fonts",
+      resources: [.process("Fonts")]
     )
   ]
 )
